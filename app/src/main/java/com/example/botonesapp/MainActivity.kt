@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Content(darkMode = darkMode)
+                    Content(darkMode = darkMode) //sebs es bien pro
                 }
             }
         }

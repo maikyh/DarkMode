@@ -89,13 +89,20 @@ fun BotonSwitch() {
 }
 
 @Composable
-fun DarkMode(darkMode: MutableState<Boolean>) {
-    Button(onClick = { darkMode.value = !darkMode.value }) {
+fun DarkMode(darkMode: MutableState<Boolean>, onDarkModeChange: (Boolean) -> Unit) {
+    Button(onClick = {
+        // Cambia el valor de darkMode
+        val newDarkMode = !darkMode.value
+        darkMode.value = newDarkMode
+        // Llama al callback para actualizar la preferencia
+        onDarkModeChange(newDarkMode)
+    }) {
         Icon(imageVector = Icons.Default.Star, contentDescription = "DarkMode")
         Spacer(modifier = Modifier.width(15.dp))
         Text(text = "Dark Mode", fontSize = 30.sp)
     }
 }
+
 
 @Composable
 fun FloatingAction() {
